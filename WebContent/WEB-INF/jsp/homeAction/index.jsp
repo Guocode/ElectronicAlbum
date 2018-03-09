@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>在线电子相册制作平台</title>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<frameset rows="100,*,25" framespacing="0" border="1" frameborder="yes">
+<frameset rows="75,*,25"  border="1px" frameborder="yes">
 	<frame noresize name="TopMenu" scrolling="no" src="${pageContext.request.contextPath}/home_top.action">
 	<frameset cols="180,*" id="resize">
 		<frame noresize name="menu" scrolling="yes" src="${pageContext.request.contextPath}/home_left.action">

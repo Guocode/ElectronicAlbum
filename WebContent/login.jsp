@@ -37,7 +37,7 @@
 		  box-sizing: border-box;
 		  font-size: 14px;
 		}
-		.form .button {
+		.form button {
 		  font-family: "Microsoft YaHei","Roboto", sans-serif;
 		  text-transform: uppercase;
 		  outline: 0;
@@ -155,57 +155,57 @@
 	<!--[if IE]>
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
 	<![endif]-->
-</head>
-<body>
-
-		<div id="wrapper" class="login-page">
-		  <div id="login_form" class="form">
-		  
-		  	<s:form action="user_login" class="login-form">
-			<div>
-			<font color="red">
-				<s:fielderror/>
-			</font>
-			</div>	
-	        <s:textfield name="loginName" size="20" tabindex="1" id="loginNameInput" placeholder="请输入用户名"></s:textfield>
-	        <input name="password" type="password" placeholder="请输入密码">
-	        <br>
-	        <s:submit value="登录" class="button" id="login"></s:submit>
-		      <p class="message">还没有账户? <a href="#">立刻创建</a></p>
-		    </s:form>
-		  
-		    <s:form action="user_add" class="register-form">
-		      	<tr>
-					<td><s:textfield name="loginName" cssClass="InputStyle" placeholder="请输入账号"/> </td>
-				</tr>
-				<tr>
-					<td><s:textfield name="password" cssClass="InputStyle" placeholder="请输入密码"/></td>
-				</tr>
-				
-				<tr>
-					<td><s:textfield name="name" cssClass="InputStyle" placeholder="请输入姓名"/> </td>
-				</tr>
-
-				<tr>
-					<td><s:textfield name="phoneNumber" cssClass="InputStyle" placeholder="请输入电话"/></td>
-				</tr>
-				<tr>
-					<td><s:textfield name="email" cssClass="InputStyle" placeholder="请输入邮箱"/></td>
-				</tr>
-		      <s:submit value="立即注册" class="button"></s:submit>
-		      <p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
-		    </s:form>
-		    
-
-		    
-		  </div>
-		</div>
-
-	
 	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+	
 	<script type="text/javascript">
+	function check_login()
+	{
+	 var name=$("#user_name").val();
+	 var pass=$("#password").val();
+	 if(name=="www.htmleaf.com" && pass=="www.htmleaf.com")
+	 {
+	  alert("登录成功！");
+	  $("#user_name").val("");
+	  $("#password").val("");
+
+	 }
+	 else
+	 {
+	  $("#login_form").removeClass('shake_effect');  
+	  setTimeout(function()
+	  {
+	   $("#login_form").addClass('shake_effect')
+	  },1);  
+	 }
+	}
+	function check_register(){
+		var name = $("#r_user_name").val();
+		var pass = $("#r_password").val();
+		var email = $("r_email").val();
+		if(name!="" && pass=="" && email != "")
+		 {
+		  alert("注册成功！");
+		  $("#user_name").val("");
+		  $("#password").val("");
+		 }
+		 else
+		 {
+		  $("#login_form").removeClass('shake_effect');  
+		  setTimeout(function()
+		  {
+		   $("#login_form").addClass('shake_effect')
+		  },1);  
+		 }
+	}
 	$(function(){
+		$("#create").click(function(){
+			check_register();
+			return false;
+		})
+		$("#login").click(function(){
+			check_login();
+			return false;
+		})
 		$('.message a').click(function () {
 		    $('form').animate({
 		        height: 'toggle',
@@ -214,5 +214,31 @@
 		});
 	})
 	</script>
+</head>
+<body>
+	
+
+		<div id="wrapper" class="login-page">
+		  <div id="login_form" class="form" >
+		    <s:form action="user_login" class="register-form">
+		      <input type="text" placeholder="用户名" id="r_user_name"/>
+		      <input type="password" placeholder="密码" id="r_password" />
+		      <input type="text" placeholder="电子邮件" id="r_emial"/>
+		      <button id="create">创建账户</button>
+		      <p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
+		    </s:form>
+		    <form class="login-form">
+		      <input type="text" placeholder="用户名" id="user_name"/>
+		      <input type="password" placeholder="密码" id="password"/>
+		      <button id="login">登　录</button>
+		      <p class="message">还没有账户? <a href="#">立刻创建</a></p>
+		    </form>
+		  </div>
+		</div>
+
+
+	
+	
+
 </body>
 </html>

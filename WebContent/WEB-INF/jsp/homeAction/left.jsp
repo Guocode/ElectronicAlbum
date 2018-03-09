@@ -57,12 +57,21 @@
 			</ul>
 		  </li>
 		  <li class="treeview">
+		  
+		  
 			<a target="right" href="album_list.action">
 			  <i class="fa fa-files-o"></i>
 			  <span>相册制作</span>
 			  <i class="fa fa-angle-left pull-right"></i>
 			</a>
+
 		  </li>
+		  
+		  	<a target="right" href="${pageContext.request.contextPath}/photo_test.action">
+			  <i class="fa fa-files-o"></i>
+			  <span>temp</span>
+			  <i class="fa fa-angle-left pull-right"></i>
+			</a>
 		 <%--  <li>
 			<a href="#">
 			  <i class="fa fa-th"></i> <span>Widgets</span>
