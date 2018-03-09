@@ -64,9 +64,53 @@
 		<br>
 		
 	</s:iterator>
+<<<<<<< HEAD
 	<div class="rank">排序方法</div>
 	<div class="photopage">所有照片</div>
 
 	  <div class="pagination" id="page"> </div>
+=======
+	
+	
+	<table>
+		<tr>
+			<td>photoid</td>
+			<td>photoPName</td>
+			<td>photoupdatetime</td>
+		</tr>
+    	<s:iterator value="#photoList" id="p">  
+	    	<tr>  
+	        <td><s:property value="#p.Id"></s:property></td>  
+	        <td><s:property value="#p.PName"></s:property></td>
+	        <td><s:property value="#p.updatetime"></s:property></td>  
+	        </tr>  
+    	</s:iterator>
+		
+		<span style="color:#FF0000;"><s:set name="page" value="#session.pagePhoto"></s:set>  
+        <tr>  
+        <td colspan="9">  
+        当前是第<s:property value="#session.pagePhoto.pageNow"/>页，共<s:property value="#session.pagePhoto.totalPage"/>页  
+        <s:if test="#session.pagePhoto.hasFirst">  
+            <s:a action="photo_getAllPhotos?pageNow=1" >首页</s:a>  
+        </s:if>  
+        <s:if test="#session.pagePhoto.hasPre">  
+            <s:a action="photo_getAllPhotos?pageNow=1" >上一页</s:a>  
+        </s:if>  
+        <s:if test="#session.pagePhoto.hasNext">  
+            <s:a action="photo_getAllPhotos?pageNow=2" >下一页</s:a>  
+        </s:if>  
+         <s:if test="#session.pagePhoto.hasLast">  
+            <s:a action="photo_getAllPhotos?pageNow=2" >尾页</s:a>  
+        </s:if>  
+     	</td>  
+  		</tr>
+  		</span>	
+	
+	
+	</table>
+	
+	
+	
+>>>>>>> 409d0ea3c139e0b36ce2b46acebcbe35a2f90a99
 </body>
 </html>

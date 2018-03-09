@@ -52,7 +52,7 @@
 			</a>
 			<ul class="treeview-menu">
 			  <li><a href="${pageContext.request.contextPath}/user_editUI.action" target="right"><i class="fa fa-circle-o"></i> 个人信息</a></li>
-			  <li><a href="${pageContext.request.contextPath}/photo_findPhotos.action" target="right"><i class="fa fa-circle-o"></i> 照片管理</a></li>
+			  <li><a href="${pageContext.request.contextPath}/photo_getAllPhotos.action" target="right"><i class="fa fa-circle-o"></i> 照片管理</a></li>
 			  <!-- <li><a href="#"><i class="fa fa-circle-o"></i> 相册制作</a></li> -->
 			</ul>
 		  </li>
@@ -66,12 +66,22 @@
 			</a>
 
 		  </li>
+<<<<<<< HEAD
 		  
 		  	<a target="right" href="${pageContext.request.contextPath}/photo_test.action">
 			  <i class="fa fa-files-o"></i>
 			  <span>temp</span>
 			  <i class="fa fa-angle-left pull-right"></i>
 			</a>
+=======
+		  <li class="treeview">
+			<a target="right" href="user_list.action">
+			  <i class="fa fa-files-o"></i>
+			  <span>用户管理</span>
+			  <i class="fa fa-angle-left pull-right"></i>
+			</a>
+		  </li>
+>>>>>>> 409d0ea3c139e0b36ce2b46acebcbe35a2f90a99
 		 <%--  <li>
 			<a href="#">
 			  <i class="fa fa-th"></i> <span>Widgets</span>

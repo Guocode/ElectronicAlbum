@@ -38,9 +38,14 @@
             <result name="toPhotoList">/WEB-INF/jsp/photoAction/list.jsp</result>
             <result name="toList" type="redirectAction">user_list</result>
             
-            <!-- 登录注销 -->
+            <result name="addalbumok">user_list</result>
             
+<<<<<<< HEAD
             <result name="logout" type="redirect">/index.jsp</result>
+=======
+            <!-- 登录注销 -->
+            <result name="logout">/WEB-INF/jsp/userAction/logout.jsp</result>
+>>>>>>> 409d0ea3c139e0b36ce2b46acebcbe35a2f90a99
             <result name="toIndex" type="redirect">/index.jsp</result>
         </action>
         
@@ -73,6 +78,8 @@
             <result name="add" >/WEB-INF/jsp/albumAction/addUI.jsp</result>
             <result name="show" >/WEB-INF/jsp/albumAction/show.jsp</result>
             <result name="edit" >/WEB-INF/jsp/albumAction/editUI.jsp</result>
+            <result name="bgpsshow" >/WEB-INF/jsp/userAction/editalbum.jsp</result>
+            
             <result name="make" >/WEB-INF/jsp/albumAction/albummake.jsp</result>
             <result name="toList" type="redirectAction">album_list</result>
             <result name="toShow" type="redirectAction">album_show</result>
