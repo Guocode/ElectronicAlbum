@@ -51,20 +51,13 @@ public class PhotoAction extends BaseAction<Photo>{
 	 * @return
 	 */
 	public String findPhotos(){
-		System.out.println("照片列表");
+
 		User user=(User)ActionContext.getContext().getSession().get("user");
 		List<Photo> photolist=photoService.findPhotoByUserid(user.getId());
 		ActionContext.getContext().put("photoList", photolist);
 		
 		
 		return "list";
-	}
-	public String test() {
-		System.out.println("test照片列表");
-		User user=(User)ActionContext.getContext().getSession().get("user");
-		List<Photo> photolist=photoService.findPhotoByUserid(user.getId());
-		ActionContext.getContext().put("photoList", photolist);	
-		return "test";
 	}
 	
 	

@@ -41,11 +41,15 @@
             <result name="addalbumok">user_list</result>
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             <result name="logout" type="redirect">/index.jsp</result>
 =======
             <!-- 登录注销 -->
             <result name="logout">/WEB-INF/jsp/userAction/logout.jsp</result>
 >>>>>>> 409d0ea3c139e0b36ce2b46acebcbe35a2f90a99
+=======
+            <result name="logout">/WEB-INF/jsp/userAction/logout.jsp</result>
+>>>>>>> parent of 1a562c5... 3/9
             <result name="toIndex" type="redirect">/index.jsp</result>
         </action>
         
@@ -67,7 +71,6 @@
             <result name="list" >/WEB-INF/jsp/photoAction/list.jsp</result>
             <result name="addPhoto" >/WEB-INF/jsp/photoAction/addUI.jsp</result>
             <result name="toList" type="redirectAction">photo_list</result>
-            <result name="test" >/WEB-INF/jsp/photoAction/makealb.jsp</result>
         </action>
         
         

@@ -7,7 +7,7 @@
 <%pageContext.setAttribute("baseURL", request.getContextPath()); %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>struts2 +jquey uploadify3.2 实现多文件上传，可预览、删除、排序</title>
-<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="${baseURL }/js/jquery-1.9.1.js" type="text/javascript"></script>
 <script src="${baseURL }/js/jquery.uploadify.min.js" type="text/javascript"></script>
 <script src="${baseURL }/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="${baseURL }/js/ajaxsubmit.js" type="text/javascript" ></script>
@@ -143,12 +143,26 @@ ul li{list-style: none}
 </script>  
 </head>
 <body>
-	${baseURL }
-    <input type="file" name="uploadifys" id="uploadFile" />  
-    <br/> 
+    <div id="some_file_queue"></div>  
 
+    <p>按钮</p>
+    <input type="file" name="uploadifys" id="uploadFile" />  
+    <br /> 
+    <p>${baseURL}</p> 
     <form action="${baseURL}upload.action?savePath=imgs" id="form1"  >  
+      
     <ul id="pics" >  
+    <!--   
+        <li class='wraps' name="list"><input type='text' name='mvUrl'  style='float: left;' /><span class='preview ui-icon ui-icon-newwin' >预览</span><span class='del ui-icon-closethick ui-icon'>删除</span></li> 
+      
+    <!--
+    <li name="list">  
+        <div style="position: relative;">  
+            <img src="${baseURL }/" name="mvUrl" width="100px" height="80px" class="myimg"/>  
+            <div class='del ui-icon-closethick ui-icon' style="position: absolute;top: 0;right: 0;background-color: white;">删除</div>  
+        </div>  
+    </li>  
+      -->
     </ul>  
     </form>  
     <div style="clear: both;margin-top: 20px">  
@@ -165,6 +179,6 @@ ul li{list-style: none}
             <span class="ui-button-icon-primary ui-icon ui-icon-locked"></span> <span class="ui-button-text">完成</span>  
         </button>  
     </div> 
-    <div id="some_file_queue"></div>
+    <s:a action="photo_findPhotos?userid=1"><input type="button"  value="查找"/></s:a>
 </body>
 </html>
